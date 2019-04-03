@@ -8,4 +8,4 @@ If you participate in the course, please send an email to Jörn Grahl and ask fo
 
 I grant students read-only access as a collaborator. 
 
-Fetch updates regularly.
+Please fetch updates regularly.
