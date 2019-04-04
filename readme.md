@@ -2,7 +2,7 @@
 
 # Programming Data Science
 
-This repository contains all student materials (assignments, data, ...) for the programming data science_ course in summer 2019.
+This repository contains all student materials (assignments, data, ...) for the _programming data science_ course in summer 2019.
 
 If you participate in the course, please send an email to Jörn Grahl and ask for access. 
 
