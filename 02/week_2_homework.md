@@ -34,5 +34,6 @@ The following resources will provide background information, a broader perspecti
     * When to use what? [A nice table.](https://towardsdatascience.com/demystifying-statistical-analysis-1-a-handy-cheat-sheet-b6229bf992cf)
     * The stats tutor's quick guide to commonly used tests: [PDF](http://www.statstutor.ac.uk/resources/uploaded/tutorsquickguidetostatistics.pdf)
     * Another [overview](https://stats.idre.ucla.edu/other/mult-pkg/whatstat/), with links to R
+    * Yet another [overview](https://www.methodenberatung.uzh.ch/de/datenanalyse_spss.html), although the code examples are for SPSS
 
 3. An more empirical perspective on mediation: [video tutorial](https://www.youtube.com/watch?v=EI5y6pV87-Q) on causal mediation, the instructor is [Tyler VanderWeele](https://www.hsph.harvard.edu/tyler-vanderweele/). This is advanced material, it might be interesting for doctoral students trying to explain causal effects from data using mediation.
