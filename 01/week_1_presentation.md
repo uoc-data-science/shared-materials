@@ -56,7 +56,10 @@ Learning objectives:
   - two modes used in this class: coding and reporting,
   - only your code is real, not the current environment
   - create environment through a pipeline
-- good folder structure (example)
+- good folder structure
+  - [example 1](https://drivendata.github.io/cookiecutter-data-science/)
+  - [general thoughts](https://www.kdnuggets.com/2018/07/cookiecutter-data-science-organize-data-project.html)
+  - [example 2](http://projecttemplate.net/getting_started.html)
 - use relative paths
 
 ## Data-related
