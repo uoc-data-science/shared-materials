@@ -64,3 +64,4 @@ The following resources will provide background information, a broader perspecti
 
 2. Hadley Wickham: [A layered grammar of graphics](https://vita.had.co.nz/papers/layered-grammar.html)
 
+2. I found out about the good [R Graphics Cookbook](https://r-graphics.org/) too late to include it in the lecture somehow. Read it online for free.
