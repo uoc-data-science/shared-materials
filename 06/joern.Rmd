@@ -1,0 +1,115 @@
+---
+title: "Joerns report"
+author: "Joern Grahl"
+date: "23-05-2019"
+bibliography: literature.bib
+output:
+  bookdown::html_document2:
+    toc: yes
+    toc_float: true
+    theme: flatly
+---
+
+```{r importMyLibraries, include=FALSE}
+  # here is place for some code
+  # load libraries
+  library(tidyverse)
+  library(ggplot2)
+  library(dplyr)
+  library(knitr)
+```
+
+# Prologue
+
+# Introduction {#introduction}
+
+```{r plot2, echo=FALSE, fig.cap="Carat against table"}
+  ggplot(data=diamonds, aes(x=carat, y=table)) +
+    geom_point() +
+    theme_bw()
+```
+
+## Motivation: why
+## Expected results
+
+# Data import
+
+The `diamonds` dataset has `r nrow(diamonds)` observations.
+
+```{r basicInformationDiamonds, echo=FALSE, warning=FALSE}
+  # filter, use diamonds of a certain cut
+  premium_diamonds <- diamonds %>% 
+    filter(cut=="Premium")
+```
+
+The `diamonds` dataset has `r nrow(premium_diamonds)` observations.
+
+# Descriptive statistics
+## Tables
+
+```{r myTables}
+  kable(head(diamonds)) # kableextra
+  df <- data.frame(X=1:10, Y=11:20, Z=101:110) # fake data
+  summary_stats <- df %>% # start with data frame, and then ...
+    summarize_at(
+      .vars = c("X", "Y", "Z"), # select variables that should be in the table
+      .funs = funs(min, max, mean, median, sd) # which summary statistics do you want?
+    ) %>% 
+    gather(key, value) %>% # transpose everything, and then ...
+    separate(col=key, sep="_", c("feature", "stat")) %>% # make two columns out of var name
+    spread(key=stat, value=value) # reapeated obs into multiple columns
+  kable(summary_stats)
+```
+
+What about factors?
+
+```{r myTableWithAFactor}
+  df <- data.frame(X=1:10, Y=11:20, Z=101:110, Cat=c("cat 1", "cat 2")) # fake data
+  summary_stats <- df %>% # start with data frame, and then ...
+    group_by(Cat) %>% # will do summary stats for each value of Cat seperately
+    summarize_at(
+      .vars = c("X", "Y", "Z"), # select variables that should be in the table
+      .funs = funs(min, max, mean, median, sd) # which summary statistics do you want?
+    ) %>% 
+    gather(key, value, -Cat) %>% # exclude the category, "transpose", and then ...
+    separate(col=key, sep="_", c("feature", "stat")) %>% # make two columns out of var name
+    spread(key=stat, value=value) # reapeated obs into multiple columns
+  # now you may want to remove the repeated "cat 1" and the repeated "cat 2", and then kable the df.
+  kable(summary_stats)
+```
+
+
+## Figures
+
+Figure \@ref(fig:plot) shows carat information against price. 
+Figure \@ref(fig:plot2) shows the table information agains price.
+Section \@ref(introduction) was the Introduction.
+
+
+```{r plot, echo=FALSE, fig.cap="Carat against price"}
+  ggplot(data=diamonds, aes(x=carat, y=price)) +
+    geom_point() +
+    theme_bw()
+```
+
+The number of observations $n=$ `r nrow(diamonds)`. A simple formular: $\sum_{i=1}^n = 100$.
+
+$$
+\begin{equation}
+\lim\limits_{x \to \infty \exp(-x)=0}
+\end{equation}
+$$
+The same beast with a number
+
+$$
+\begin{equation}
+\lim\limits_{x \to \infty \exp(-x)=0}
+(#eq:someMath)
+\end{equation}
+$$
+It is trivial to show that \@ref(eq:someMath) is correct.
+Previous work (@R-base) has shown that it is wrong.  
+
+# Summary
+
+# Literature 
